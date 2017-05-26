@@ -1,0 +1,52 @@
+<script>
+
+  $(document).ready(function(){
+
+  var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+
+  var sheets = document.styleSheets;
+  var sheet  = document.styleSheets[8];
+  console.log(document.styleSheets[8]);
+  console.log(document.styleSheets[8].media.mediaText);
+  var sheet = (function() {
+	// Create the <style> tag
+	var style = document.createElement("style");
+// Add a media (and/or media query) here if you'd like!
+
+sheet.insertRule("@media only screen and (max-width : 991px) { #navbarResponsive { width: 175%; } }", 1);
+sheet.insertRule("@media only screen and (max-width : 991px) { #navbarResponsive { background: #333 } }", 2);
+sheet.insertRule("@media only screen and (max-width : 991px) { #grr { float: left } }", 3);
+sheet.insertRule("@media only screen and (max-width : 991px) { #navbarResponsive { margin-right: 5px } }", 4);
+
+	// style.setAttribute("media", "screen")
+	// style.setAttribute("media", "only screen and (max-width : 1024px)")
+
+	// WebKit hack :(
+	style.appendChild(document.createTextNode(""));
+	// Add the <style> element to the page
+	document.head.appendChild(style);
+
+	return style.sheet;
+})();
+
+
+/*function addCSSRule(sheet, selector, rules, index) {
+	if("insertRule" in sheet) {
+		sheet.insertRule(selector + "{" + rules + "}", index);
+	}
+	else if("addRule" in sheet) {
+		sheet.addRule(selector, rules, index);
+	}
+};
+
+addCSSRule(document.styleSheets[8],"navbarResponsive", "min-width:100%;");*/
+
+    if (w < 991){
+
+        console.log();
+      }
+    else
+      {
+       };
+    });
+  </script>
